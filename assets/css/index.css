@@ -515,3 +515,10 @@ textarea {
 
 /*--------------------footer----------------------*/
 /*--------------------END footer----------------------*/
+.icon {
+  width: 1em;
+  color: red;
+}
+.icon path {
+  fill: red;
+}
