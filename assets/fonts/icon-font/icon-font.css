@@ -1,0 +1,36 @@
+
+@font-face {
+  font-family: 'icon-font';
+  src: url('/assets/fonts/icon-font/icon-font.eot');
+  src: url('/assets/fonts/icon-font/icon-font.woff2') format('woff2'), /* Super Modern Browsers */
+       url('/assets/fonts/icon-font/icon-font.woff')  format('woff'), /* Pretty Modern Browsers */
+       url('/assets/fonts/icon-font/icon-font.ttf')   format('truetype'), /* Safari, Android, iOS */
+       url('/assets/fonts/icon-font/icon-font.svg#icon-font') format('svg'); /* Legacy iOS */
+  font-weight: normal;
+  font-style: normal;
+}
+.icon-font {
+  display: inline-block;
+  font: normal normal normal 24px/1 icon-font;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.facebook:before {
+  content: "";
+}
+
+.footer_logo:before {
+  content: "";
+}
+
+.in:before {
+  content: "";
+}
+
+.logo:before {
+  content: "";
+}
+
+  
