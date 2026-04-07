@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+
+	<meta charset="utf-8"/>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Список ссылок на страницы</title>
+
+	<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <script type="module" crossorigin src="/assets/js/index.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/css/index.css">
+</head>
+<body>
+
+	
+		<div class="container">
+	<div class="row">
+		<div class="col-12">
+			<header class="py-5 text-center">
+				<h1 class="d-inline-block border border-dark border-2 rounded py-2 px-4 text-dark">Список ссылок на страницы</h1>
+				<div>
+					<a class="text-dark small" href="ui.html">Открыть список страниц</a>
+				</div>
+			</header>
+		</div>
+	</div>
+</div>
+
+	
+
+	
+	<div class="container mb-5">
+		<div class="row">
+			<div class="col-12">
+				<div class="h4 my-4 opacity-50">Всего страниц: 2</div>
+			</div>
+			<div class="col-12">
+				<div class="list-group">
+				
+					<a class="list-group-item list-group-item-action d-lg-flex justify-content-between align-items-center js-link-group" href="/404.html" target="_blank"><div>404 - страница не найдена</div><code class="d-inline-block badge text-secondary bg-light">404.html</code></a>
+				
+					<a class="list-group-item list-group-item-action d-lg-flex justify-content-between align-items-center js-link-group" href="/index.html" target="_blank"><div>PEPELAC</div><code class="d-inline-block badge text-secondary bg-light">index.html</code></a>
+				
+				</div>
+			</div>
+			<div class="col-12 mt-5 text-center">
+				<div><button id="download-list" class="btn btn-outline-success">Скачать список страниц</button></div>
+			</div>
+		</div>
+	</div>
+	<script>
+		// Скачивание файла
+		const download = (text, filename, type = "text/plain") => {
+			const url = URL.createObjectURL(new Blob([text], { type }));
+			Object.assign(document.createElement("a"), { href: url, download: filename }).click();
+		};
+
+		// Генерация контента ссылок
+		const listHtml = [{"file":"404.html","title":"404 - страница не найдена"},{"file":"index.html","title":"PEPELAC"}];
+		const contentLinks = listHtml.map(({ title, file }) => `${title} - /${file}`).join('\n');
+
+		// Обработка кликов на ссылки и добавление класса active
+		document.querySelectorAll('.js-link-group').forEach(link =>
+			link.addEventListener('click', () => link.classList.add('active'))
+		);
+
+		// Скачивание списка страниц
+		document.getElementById('download-list').addEventListener('click', () =>
+			download(contentLinks, 'Список страниц сайта.txt')
+		);
+	</script>
+
+
+	
+		
+	
+
+</body>
+</html>
